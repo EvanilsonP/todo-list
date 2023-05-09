@@ -15,12 +15,23 @@ function addTask() {
     }
     // clearing input field after clicking the button
     inputBox.value = '';
-}
+    saveData();
+};
 
 listContainer.addEventListener('click', function(e) {
     if(e.target.tagName === 'LI') {
         e.target.classList.toggle('checked');
+        saveData();
     } else if(e.target.tagName === 'SPAN'){
         e.target.parentElement.remove();
+        saveData();
     }
 }, false);
+
+// storing todo in the local storage so that we do not lose it after refreshing/leaving the tab
+function saveData() {
+    // whatever content is in the list container it'll be stored in ou browser under the name 'data'
+    localStorage.setItem('data', listContainer.innerHTML);
+};
+
+// showing the stored data whenever we open the app again
