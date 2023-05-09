@@ -12,16 +12,18 @@
         <div class="todo-app">
             <h2>To-Do List <img src="imgs/icon.png" alt=""></h2>
             <div class="row">
-                <input type="text" placeholder="Your text goes here...">
-                <button>Add</button>
+                <input type="text" id="input-box" placeholder="Your text goes here...">
+                <button onclick="addTask()">Add</button>
             </div>
 
             <ul id="list-container">
-                <li>Task 1</li>
+                <li class="checked">Task 1</li>
                 <li>Task 2</li>
                 <li>Task 3</li>
             </ul>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
