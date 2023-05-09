@@ -28,6 +28,14 @@ listContainer.addEventListener('click', function(e) {
     }
 }, false);
 
+// adding a task by pressing the enter button
+inputBox.addEventListener('keyup', function(e) {
+    if(e.keyCode === 13) { // 13 is the keycode for "Enter"
+        e.preventDefault();
+        addTask();
+    }
+});
+
 // storing todo in the local storage so that we do not lose it after refreshing/leaving the tab
 function saveData() {
     // whatever content is in the list container it'll be stored in ou browser under the name 'data'
