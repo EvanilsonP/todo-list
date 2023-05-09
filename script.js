@@ -35,3 +35,7 @@ function saveData() {
 };
 
 // showing the stored data whenever we open the app again
+function showTask() {
+    listContainer.innerHTML = localStorage.getItem('data');
+}
+showTask();
